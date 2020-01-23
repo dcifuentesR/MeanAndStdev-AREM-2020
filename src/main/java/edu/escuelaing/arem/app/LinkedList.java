@@ -44,13 +44,13 @@ public class LinkedList<T> implements Iterable<T> {
 		}
 
 		public boolean hasNext() {
-			// TODO Auto-generated method stub
-			return false;
+			return current !=null;
 		}
 
 		public T next() {
-			// TODO Auto-generated method stub
-			return null;
+			T value =current.getValue();
+			current = current.getNextNode();
+			return value;
 		}
 		
 	}
