@@ -6,20 +6,55 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class LinkedList extends AbstractSequentialList{
+public class LinkedList<T> implements Iterable<T> {
 
-	@Override
-	public ListIterator listIterator(int index) {
-		
-		return new ;
+	private Node<T> head;
+	private Node<T> tail;
+
+	public void add(T data) {
+		Node<T> node = new Node<T>(data);
+		if (head == null)
+			tail = head = node;
+		else {
+			tail.setNextNode(node);
+			tail = node;
+		}
 	}
 
-	@Override
-	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+	// return Head
+	public Node<T> getHead() {
+		return head;
+	}
+
+	// return Tail
+	public Node<T> getTail() {
+		return tail;
+	}
+
+	// return Iterator instance
+	public Iterator<T> iterator() {
+		return new ListIterator<T>(this);
 	}
 	
+	class ListIterator<T> implements Iterator<T>{
+		private Node<T> current;
+		
+		public ListIterator(LinkedList<T> list) {
+			current=list.getHead();
+		}
+
+		public boolean hasNext() {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+		public T next() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		
+	}
+
 //	private Node firstNode;
 //	private Node lastNode;
 //	
@@ -93,7 +128,5 @@ public class LinkedList extends AbstractSequentialList{
 //		// TODO Auto-generated method stub
 //		return 0;
 //	}
-
-	
 
 }

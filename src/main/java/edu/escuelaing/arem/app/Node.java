@@ -1,17 +1,17 @@
 package edu.escuelaing.arem.app;
 
-public class Node {
+public class Node<T> {
 	
 	private Node nextNode;
 	private Node prevNode;
 	
-	private int value;
+	private T value;
 	
-	public Node(int value) {
+	public Node(T value) {
 		this.value=value;
 	}
 	
-	public int getValue() {
+	public T getValue() {
 		return value;
 	}
 
