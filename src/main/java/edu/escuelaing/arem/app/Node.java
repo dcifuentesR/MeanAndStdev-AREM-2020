@@ -2,8 +2,8 @@ package edu.escuelaing.arem.app;
 
 public class Node<T> {
 	
-	private Node nextNode;
-	private Node prevNode;
+	private Node<T> nextNode;
+	private Node<T> prevNode;
 	
 	private T value;
 	
@@ -15,19 +15,19 @@ public class Node<T> {
 		return value;
 	}
 
-	public Node getNextNode() {
+	public Node<T> getNextNode() {
 		return nextNode;
 	}
 
-	public void setNextNode(Node nextNode) {
+	public void setNextNode(Node<T> nextNode) {
 		this.nextNode = nextNode;
 	}
 
-	public Node getPrevNode() {
+	public Node<T> getPrevNode() {
 		return prevNode;
 	}
 
-	public void setPrevNode(Node prevNode) {
+	public void setPrevNode(Node<T> prevNode) {
 		this.prevNode = prevNode;
 	}
 

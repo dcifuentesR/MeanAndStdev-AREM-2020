@@ -12,7 +12,5 @@ public class App
     {
     	LinkedList l = new LinkedList();
     	
-    	l.add(1,3);
-    	System.out.print(l);
     }
 }
