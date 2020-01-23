@@ -1,10 +1,6 @@
 package edu.escuelaing.arem.app;
 
-import java.util.AbstractSequentialList;
-import java.util.Collection;
 import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
 
 public class LinkedList<T> implements Iterable<T> {
 
