@@ -57,12 +57,10 @@ public class LinkedList<T> implements List<T>,Iterable<T> {
 	}
 
 	public int size() {
-		// TODO Auto-generated method stub
 		return size;
 	}
 
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
 		return size == 0;
 	}
 
@@ -82,7 +80,6 @@ public class LinkedList<T> implements List<T>,Iterable<T> {
 	}
 
 	public boolean remove(Object o) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
@@ -160,79 +157,5 @@ public class LinkedList<T> implements List<T>,Iterable<T> {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-//	private Node firstNode;
-//	private Node lastNode;
-//	
-//	public LinkedList() {
-//		firstNode=null;
-//		lastNode=null;
-//	}
-//	
-//	public boolean add(Node node) {
-//		lastNode.setNextNode(node);
-//		node.setPrevNode(lastNode);
-//		lastNode=node;
-//		//REVISAR CASOS EN QUE RESPONDA FALSE
-//		return true;
-//	}
-//
-//	public void add(int index, Node element) {
-//		Node currentNode=firstNode;
-//		for(int i=0;i<index;i++)
-//			currentNode=currentNode.getNextNode();
-//		
-//		
-//		
-//		
-//	}
-//
-//	
-//	
-////	public void addLastNode(Node node) {
-////		lastNode.setNextNode(node);
-////		node.setPrevNode(lastNode);
-////		lastNode=node;
-////	}
-////	
-////	public void addFirstNode(Node node) {
-////		firstNode.setPrevNode(node);
-////		node.setNextNode(firstNode);
-////		firstNode=node;
-////	}
-////	
-////	public void removeFirstNode() {
-////		Node newFirstNode=firstNode.getNextNode();
-////		newFirstNode.setPrevNode(null);
-////		firstNode=newFirstNode;
-////		
-////	}
-////	
-////	public void removeLastNode() {
-////		Node newFirstNode=firstNode.getNextNode();
-////		newFirstNode.setPrevNode(null);
-////		firstNode=newFirstNode;
-////		
-////	}
-//
-//	public Node getFirstNode() {
-//		return firstNode;
-//	}
-//
-//	public Node getLastNode() {
-//		return lastNode;
-//	}
-//
-//	@Override
-//	public ListIterator listIterator(int arg0) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public int size() {
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
 
 }
