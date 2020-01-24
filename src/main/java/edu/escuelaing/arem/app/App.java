@@ -19,7 +19,7 @@ public class App
     	int option;
     	do {
     		System.out.println("Seleccione una opcion");
-    		LinkedList<Integer> l = new LinkedList<Integer>();
+    		LinkedList<Double> l = new LinkedList<Double>();
     		option=scanner.nextInt();
     		switch(option) {
     		case 1:
@@ -37,21 +37,34 @@ public class App
     	
     }
     
-    private void readFile(List<Integer> l,String path) throws FileNotFoundException {
+    private void readFile(List<Double> l,String path) throws FileNotFoundException {
     	File f = new File(path);
     	Scanner scanner = new Scanner(f);
     	while(scanner.hasNext()) {
-        	int myInt = scanner.nextInt();
+        	Double myInt = scanner.nextDouble();
         	l.add(myInt);
     	}
     	scanner.close();
     }
     
-    private static double getMean() {
-    	return 0.0;
+    private static float sum(LinkedList<Double> l) {
+    	float sum=0;
+    	for(Double d:l)
+    		sum+=d;
+    	return sum;
     }
     
-    private static double getStdev() {
-    	return 0.0;
+    public static float calcMean(LinkedList<Double> l) {
+    	return sum(l)/l.getSize();
+    }
+    
+    public static float calcStdev(LinkedList<Double> l) {
+    	float mean=calcMean(l);
+    	float sum=0;
+    	for(Double d:l) {
+    		sum+=d*d;
+    	}
+    	return (float)Math.sqrt(sum/(l.getSize()-1));
+    	
     }
 }

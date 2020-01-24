@@ -6,6 +6,7 @@ public class LinkedList<T> implements Iterable<T> {
 
 	private Node<T> head;
 	private Node<T> tail;
+	private int size;
 
 	public void add(T data) {
 		Node<T> node = new Node<T>(data);
@@ -15,6 +16,7 @@ public class LinkedList<T> implements Iterable<T> {
 			tail.setNextNode(node);
 			tail = node;
 		}
+		size++;
 	}
 
 	// return Head
@@ -49,6 +51,10 @@ public class LinkedList<T> implements Iterable<T> {
 			return value;
 		}
 		
+	}
+
+	public int getSize() {
+		return size;
 	}
 
 //	private Node firstNode;
