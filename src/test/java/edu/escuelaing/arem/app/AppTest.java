@@ -13,23 +13,32 @@ import edu.escuelaing.arem.app.*;
  */
 public class AppTest
 {
+	private LinkedList<Float> proxySize;
+	private LinkedList<Float> developmentHours;
+	public void setup() {
+		proxySize = new LinkedList<Float>();
+		developmentHours = new LinkedList<Float>();
+		
+		try {
+			App.readFile( proxySize, "./src/resources/ProxySize.txt");
+			App.readFile( developmentHours, "./src/resources/DevelopmentHours.txt");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
     @Test
     public void calcMeanTest(){
-    	LinkedList<Float> l = new LinkedList<Float>();
-    	try {
-			App.readFile( l, "./src/resources/ProxySize.txt");
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-    	assertEquals("should calculate mean", 550.6,App.calcMean(l),0.1);
+    	setup();
+    	assertEquals("should calculate mean accurately with all integers", 550.6,App.calcMean(proxySize),0.1);
+    	assertEquals("should calculate mean accurately with all floats", 60.32,App.calcMean(developmentHours),0.1);
+    }
+    
+    @Test
+    public void calcStdevTest() {
+    	setup();
+    	assertEquals("should calculate stdev accurately with all integers",572.03 ,App.calcStdev(proxySize) ,0.1);
+    	assertEquals("should calculate stdev accurately with all floats",62.26 ,App.calcStdev(developmentHours) ,0.1);
     	
-    	l = new LinkedList<Float>();
-    	try {
-			App.readFile( l, "./src/resources/DevelopmentHours.txt");
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	assertEquals("should calculate mean", 60.32,App.calcMean(l),0.1);
     }
 }
