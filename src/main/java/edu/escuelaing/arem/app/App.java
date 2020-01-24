@@ -19,13 +19,13 @@ public class App
     	int option;
     	do {
     		System.out.println("Seleccione una opcion");
-    		LinkedList<Double> l = new LinkedList<Double>();
+    		LinkedList<Float> l = new LinkedList<Float>();
     		option=scanner.nextInt();
     		switch(option) {
     		case 1:
     			System.out.println("por favor ingrese la ruta del archivo a cargar");
     			String filePath = scanner.next();
-    			readFile((List<Double>) l,filePath);
+    			readFile(l,filePath);
     			break;
     		case 2:
     			break;
@@ -37,35 +37,35 @@ public class App
     	
     }
     
-    private static void readFile(List<Double> l,String path) throws FileNotFoundException {
+    public static void readFile(List<Float> l,String path) throws FileNotFoundException {
     	File f = new File(path);
     	Scanner scanner = new Scanner(f);
     	while(scanner.hasNext()) {
-        	Double myInt = scanner.nextDouble();
+        	Float myInt = scanner.nextFloat();
         	l.add(myInt);
     	}
     	scanner.close();
     }
     
-    private static float sum(LinkedList<Double> l) {
+    private static float sum(List<Float> l) {
     	float sum=0;
-    	for(Double d:l)
+    	for(Float d:l)
     		sum+=d;
     	return sum;
     }
     
-    public static float calcMean(LinkedList<Double> l) {
-    	return sum(l)/l.getSize();
+    public static float calcMean(List<Float> l) {
+    	return sum(l)/l.size();
     }
     
-    public static float calcStdev(LinkedList<Double> l) {
+    public static float calcStdev(List<Float> l) {
     	float mean=calcMean(l);
     	float sum=0;
-    	for(Double d:l) {
+    	for(Float d:l) {
     		float term=(float) (d-mean);
     		sum+=term*term;
     	}
-    	return (float)Math.sqrt(sum/(l.getSize()-1));
+    	return (float)Math.sqrt(sum/(l.size()-1));
     	
     }
 }

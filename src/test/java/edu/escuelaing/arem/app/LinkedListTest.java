@@ -10,13 +10,13 @@ public class LinkedListTest {
 	
 	@Test
 	public void testAddNodes() {
-//		LinkedList l = new LinkedList();
-//		
-//		assertNull("The first node should be empty on list creation",l.getFirstNode());
-//		assertNull("The last node should be empty on list creation",l.getLastNode());
-//		
-//		l.addLastNode(new Node(3));
-//		assertEquals("firstNode and lastNode should point to the same node",l.getFirstNode(),l.getLastNode());
+		LinkedList<Integer> l = new LinkedList<Integer>();
+		
+		assertNull("The first node should be empty on list creation",l.getHead());
+		assertNull("The last node should be empty on list creation",l.getTail());
+		
+		l.add(3);
+		assertEquals("firstNode and lastNode should point to the same node",l.getHead(),l.getTail());
 	}
 	
 	@Test
