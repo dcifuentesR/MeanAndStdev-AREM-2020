@@ -25,7 +25,7 @@ public class App
     		case 1:
     			System.out.println("por favor ingrese la ruta del archivo a cargar");
     			String filePath = scanner.next();
-    			//readFile(l,filePath);
+    			readFile((List<Double>) l,filePath);
     			break;
     		case 2:
     			break;
@@ -37,7 +37,7 @@ public class App
     	
     }
     
-    private void readFile(List<Double> l,String path) throws FileNotFoundException {
+    private static void readFile(List<Double> l,String path) throws FileNotFoundException {
     	File f = new File(path);
     	Scanner scanner = new Scanner(f);
     	while(scanner.hasNext()) {
@@ -62,7 +62,8 @@ public class App
     	float mean=calcMean(l);
     	float sum=0;
     	for(Double d:l) {
-    		sum+=d*d;
+    		float term=(float) (d-mean);
+    		sum+=term*term;
     	}
     	return (float)Math.sqrt(sum/(l.getSize()-1));
     	
